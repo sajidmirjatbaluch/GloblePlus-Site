@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <link href="styles/tailwind.css" rel="stylesheet">
+<meta content="GloblePlus - Latest World, Sports &amp; Entertainment News" property="og:title"/>
+<meta content="Get the latest in World News, Sports updates, and Entertainment from Hollywood to Bollywood on GloblePlus." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.globleplus.com/" property="og:url"/>
+<meta content="https://www.globleplus.com/assets/cover.jpg" property="og:image"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="GloblePlus brings you the latest in World News, Sports, and Entertainment with coverage from Hollywood to Bollywood. Stay informed, stay global." name="description"/>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Blog - GloblePlus</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<style>
+    .hidden { display: none; }
+  </style>
+<meta content="Explore thought-provoking articles and insights on mindfulness, lifestyle, and well-being on the GloblePlus blog." name="description"><link href="https://www.GloblePlus.com/blog.html" rel="canonical"/> <link href="style.css" rel="stylesheet"/>
+</meta></meta></meta></head>
+<body class="bg-gray-100 text-gray-900 font-sans antialiased"><h1>GloblePlus Blog</h1>
+<nav class="bg-blue-900 text-white p-4">
+<div class="max-w-7xl mx-auto flex justify-between items-center">
+<a class="text-xl font-bold" href="index.html">GloblePlus</a>
+<div class="space-x-4">
+<a href="index.html">Home</a>
+<a class="underline" href="blog.html">Blog</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</div>
+</div>
+</nav>
+<div class="max-w-7xl mx-auto p-4">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between mb-6 space-y-2 sm:space-y-0">
+<input class="p-2 border rounded w-full sm:w-1/2" id="searchInput" placeholder="Search articles..." type="text"/>
+<select class="p-2 border rounded w-full sm:w-1/4" id="categoryFilter">
+<option value="">All Categories</option>
+<option value="news">News</option>
+<option value="sports">Sports</option>
+<option value="hollywood">Hollywood</option>
+<option value="bollywood">Bollywood</option>
+</select>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6" id="articleList">
+<div class="article-card" data-category="news" data-title="India-Pakistan Crisis Escalates">
+<a class="block bg-white p-4 rounded shadow hover:shadow-lg" href="world-news.html">
+<h2 class="font-semibold text-lg mb-1">India-Pakistan Crisis Escalates</h2>
+<p class="text-sm text-gray-600">Tensions rise after a deadly attack in Kashmir; diplomatic and military actions follow.</p>
+</a>
+</div>
+<div class="article-card" data-category="sports" data-title="IPL 2025: Midseason Drama Unfolds">
+<a class="block bg-white p-4 rounded shadow hover:shadow-lg" href="sports-news.html">
+<h2 class="font-semibold text-lg mb-1">IPL 2025: Midseason Drama Unfolds</h2>
+<p class="text-sm text-gray-600">Unexpected upsets and rising stars dominate this year’s Indian Premier League.</p>
+</a>
+</div>
+<div class="article-card" data-category="hollywood" data-title="Oscars 2025: Hollywood’s Biggest Night">
+<a class="block bg-white p-4 rounded shadow hover:shadow-lg" href="hollywood.html">
+<h2 class="font-semibold text-lg mb-1">Oscars 2025: Hollywood’s Biggest Night</h2>
+<p class="text-sm text-gray-600">Stunning wins, emotional speeches, and groundbreaking films take center stage.</p>
+</a>
+</div>
+<div class="article-card" data-category="bollywood" data-title="Bollywood Blockbusters to Watch">
+<a class="block bg-white p-4 rounded shadow hover:shadow-lg" href="bollywood.html">
+<h2 class="font-semibold text-lg mb-1">Bollywood Blockbusters to Watch</h2>
+<p class="text-sm text-gray-600">Here are the most anticipated Bollywood films releasing this summer.</p>
+</a>
+</div>
+</div>
+</div>
+<script>
+    const searchInput = document.getElementById('searchInput');
+    const categoryFilter = document.getElementById('categoryFilter');
+    const articles = document.querySelectorAll('.article-card');
+
+    function filterArticles() {
+      const search = searchInput.value.toLowerCase();
+      const category = categoryFilter.value;
+
+      articles.forEach(card => {
+        const title = card.getAttribute('data-title').toLowerCase();
+        const cat = card.getAttribute('data-category');
+
+        const matchesSearch = title.includes(search);
+        const matchesCategory = !category || cat === category;
+
+        card.classList.toggle('hidden', !(matchesSearch && matchesCategory));
+      });
+    }
+
+    searchInput.addEventListener('input', filterArticles);
+    categoryFilter.addEventListener('change', filterArticles);
+  </script>
+</body>
+</html>
