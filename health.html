@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Health - GloblePlus</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+</head>
+<body class="bg-gray-100 text-gray-900 font-sans antialiased">
+<header class="bg-blue-900 text-white shadow-lg">
+<div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+<div class="text-2xl font-semibold">GloblePlus</div>
+<div class="md:hidden">
+<button class="text-white text-2xl focus:outline-none" id="menu-toggle">☰</button>
+</div>
+<nav class="hidden md:flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 text-base mt-4 md:mt-0" id="menu">
+<a class="hover:text-gray-300" href="index.html">Home</a>
+<a class="hover:text-gray-300" href="blog.html">Blog</a>
+<a class="hover:text-gray-300" href="world-news.html">World</a>
+<a class="hover:text-gray-300" href="technology.html">Technology</a>
+<a class="hover:text-gray-300" href="health.html">Health</a>
+<a class="hover:text-gray-300" href="education.html">Education</a>
+<a class="hover:text-gray-300" href="about.html">About</a>
+<a class="hover:text-gray-300" href="contact.html">Contact</a>
+</nav>
+</div>
+</header>
+<main class="min-h-screen max-w-6xl mx-auto px-4 py-10 space-y-6">
+<h1 class="text-3xl font-bold text-blue-900">Health &amp; Wellness</h1>
+<p class="text-lg mb-8">Tips, trends, and science-backed insights to help you live healthier.</p>
+<div class="grid md:grid-cols-2 gap-6">
+<a class="block bg-white rounded shadow p-4" href="health.html">
+<img alt="Mental health" class="rounded mb-2" src="https://images.unsplash.com/photo-1606813903032-63bfa69c5704?w=800"/>
+<h2 class="text-xl font-semibold text-blue-800">Mental Health in Focus</h2>
+<p class="text-sm text-gray-600">Experts emphasize emotional well-being as essential for a healthy life.</p>
+</a>
+<a class="block bg-white rounded shadow p-4" href="health.html">
+<img alt="Nutrition" class="rounded mb-2" src="https://images.unsplash.com/photo-1576765607924-c3ce17bd9f99?w=800"/>
+<h2 class="text-xl font-semibold text-blue-800">Nutrition That Works</h2>
+<p class="text-sm text-gray-600">Balanced eating habits are key to long-term vitality and disease prevention.</p>
+</a>
+<a class="block bg-white rounded shadow p-4 hover:shadow-lg transition" href="health.html"><img alt="Fitness Tech in 2025" class="rounded mb-2" src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?w=800"/><h2 class="text-xl font-semibold text-blue-800">Fitness Tech in 2025</h2><p class="text-sm text-gray-600">Wearables now predict illness before symptoms show.</p></a><a class="block bg-white rounded shadow p-4 hover:shadow-lg transition" href="health.html"><img alt="Mindfulness for Modern Life" class="rounded mb-2" src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=800"/><h2 class="text-xl font-semibold text-blue-800">Mindfulness for Modern Life</h2><p class="text-sm text-gray-600">Meditation apps and mental health platforms gain popularity.</p></a></div>
+</main>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    toggle?.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  });
+</script>
+</body>
+</html>

@@ -13,5 +13,16 @@
 <h1 class="text-3xl font-bold mb-4">IoT in Farming</h1>
 <div class="prose"><p>The Internet of Things (IoT) brings smarter irrigation, livestock monitoring, and more data-driven decisions to the farm.</p></div>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    toggle?.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  });
+</script>
+
 </body>
 </html>

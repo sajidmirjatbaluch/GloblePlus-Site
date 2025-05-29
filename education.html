@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Education - GloblePlus</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+</head>
+<body class="bg-gray-100 text-gray-900 font-sans antialiased">
+<header class="bg-blue-900 text-white shadow-lg">
+<div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+<div class="text-2xl font-semibold">GloblePlus</div>
+<div class="md:hidden">
+<button class="text-white text-2xl focus:outline-none" id="menu-toggle">☰</button>
+</div>
+<nav class="hidden md:flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 text-base mt-4 md:mt-0" id="menu">
+<a class="hover:text-gray-300" href="index.html">Home</a>
+<a class="hover:text-gray-300" href="blog.html">Blog</a>
+<a class="hover:text-gray-300" href="world-news.html">World</a>
+<a class="hover:text-gray-300" href="technology.html">Technology</a>
+<a class="hover:text-gray-300" href="health.html">Health</a>
+<a class="hover:text-gray-300" href="education.html">Education</a>
+<a class="hover:text-gray-300" href="about.html">About</a>
+<a class="hover:text-gray-300" href="contact.html">Contact</a>
+</nav>
+</div>
+</header>
+<main class="min-h-screen max-w-6xl mx-auto px-4 py-10 space-y-6">
+<h1 class="text-3xl font-bold text-blue-900">Education &amp; Learning</h1>
+<p class="text-lg mb-8">Explore how learning is evolving in the digital age, from classrooms to virtual worlds.</p>
+<div class="grid md:grid-cols-2 gap-6">
+<a class="block bg-white rounded shadow p-4" href="education.html">
+<img alt="Online learning" class="rounded mb-2" src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=800"/>
+<h2 class="text-xl font-semibold text-blue-800">Rise of Online Learning</h2>
+<p class="text-sm text-gray-600">Students worldwide embrace flexibility and access to global resources.</p>
+</a>
+<a class="block bg-white rounded shadow p-4" href="education.html">
+<img alt="Future skills" class="rounded mb-2" src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=800"/>
+<h2 class="text-xl font-semibold text-blue-800">Skills of the Future</h2>
+<p class="text-sm text-gray-600">Digital literacy, creativity, and collaboration lead tomorrow's workforce.</p>
+</a>
+<a class="block bg-white rounded shadow p-4 hover:shadow-lg transition" href="education.html"><img alt="VR Classrooms Revolutionize Schools" class="rounded mb-2" src="https://images.unsplash.com/photo-1610413970203-9ae0a6d2bb30?w=800"/><h2 class="text-xl font-semibold text-blue-800">VR Classrooms Revolutionize Schools</h2><p class="text-sm text-gray-600">Students explore science and history through immersive tech.</p></a><a class="block bg-white rounded shadow p-4 hover:shadow-lg transition" href="education.html"><img alt="Coding in Elementary Schools" class="rounded mb-2" src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800"/><h2 class="text-xl font-semibold text-blue-800">Coding in Elementary Schools</h2><p class="text-sm text-gray-600">Early STEM education reshapes young minds worldwide.</p></a></div>
+</main>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    toggle?.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  });
+</script>
+</body>
+</html>
