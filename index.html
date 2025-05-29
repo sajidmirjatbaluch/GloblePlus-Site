@@ -17,12 +17,24 @@
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
 <meta content="Welcome to GloblePlus – your source for balanced, conscious, and enriching lifestyle content." name="description"><link href="https://www.GloblePlus.com/index.html" rel="canonical"/> <link href="style.css" rel="stylesheet"/>
 </meta></meta></meta></head>
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('menu');
+  toggle.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+</script>
 <body class="bg-gray-100 text-gray-900 font-sans antialiased">
 <header class="bg-blue-900 text-white shadow-lg">
 <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
 <div class="text-2xl font-semibold">GloblePlus</div>
-<nav>
-  <ul class="flex flex-col space-y-2 text-base md:flex-row md:space-x-6 md:space-y-0">
+<div class="md:hidden flex justify-end">
+  <button id="menu-toggle" class="text-white focus:outline-none">
+    ☰
+  </button>
+</div>
+<nav id="menu" class="hidden md:block mt-2 md:mt-0">
+  <ul class="flex flex-col md:flex-row md:space-x-6 space-y-2 md:space-y-0 text-base">
     <li><a class="hover:text-gray-300 transition" href="index.html">Home</a></li>
     <li><a class="hover:text-gray-300 transition" href="blog.html">Blog</a></li>
     <li><a class="hover:text-gray-300 transition" href="about.html">About</a></li>
