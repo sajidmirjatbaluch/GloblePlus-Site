@@ -14,15 +14,36 @@
 <div class="prose"><p>The Internet of Things (IoT) brings smarter irrigation, livestock monitoring, and more data-driven decisions to the farm.</p></div>
 </div>
 
+
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const toggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
-    toggle?.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
+    const toggle = document.getElementById("menu-toggle");
+    const menu = document.getElementById("menu");
+    const bar1 = document.getElementById("bar1");
+    const bar2 = document.getElementById("bar2");
+    const bar3 = document.getElementById("bar3");
+
+    toggle?.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+      bar1.classList.toggle("rotate-45");
+      bar1.classList.toggle("translate-y-1.5");
+      bar2.classList.toggle("opacity-0");
+      bar3.classList.toggle("-rotate-45");
+      bar3.classList.toggle("-translate-y-1.5");
+    });
+
+    const navLinks = menu?.querySelectorAll("a");
+    navLinks?.forEach(link => {
+      link.addEventListener("click", () => {
+        if (window.innerWidth < 768) {
+          menu.classList.add("hidden");
+          bar1.classList.remove("rotate-45", "translate-y-1.5");
+          bar2.classList.remove("opacity-0");
+          bar3.classList.remove("-rotate-45", "-translate-y-1.5");
+        }
+      });
     });
   });
 </script>
-
 </body>
 </html>

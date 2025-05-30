@@ -9,20 +9,24 @@
 </head>
 <body class="bg-gray-100 text-gray-900 font-sans antialiased">
 <header class="bg-blue-900 text-white shadow-lg">
-<div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-<div class="text-2xl font-semibold">GloblePlus</div>
-<div class="md:hidden">
-<button class="text-white text-2xl focus:outline-none" id="menu-toggle">☰</button>
+<div class="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row md:items-center md:justify-between">
+<div class="flex items-center justify-between w-full">
+<div class="text-2xl font-semibold text-white">GloblePlus</div>
+<div class="md:hidden flex flex-col justify-center items-center w-8 h-6 space-y-1 cursor-pointer" id="menu-toggle">
+<span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out" id="bar1"></span>
+<span class="block w-6 h-0.5 bg-white transition-opacity duration-300 ease-in-out" id="bar2"></span>
+<span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out" id="bar3"></span>
 </div>
-<nav class="hidden md:flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 text-base mt-4 md:mt-0" id="menu">
-<a class="hover:text-gray-300" href="index.html">Home</a>
-<a class="hover:text-gray-300" href="blog.html">Blog</a>
-<a class="hover:text-gray-300" href="world-news.html">World</a>
-<a class="hover:text-gray-300" href="technology.html">Technology</a>
-<a class="hover:text-gray-300" href="health.html">Health</a>
-<a class="hover:text-gray-300" href="education.html">Education</a>
-<a class="hover:text-gray-300" href="about.html">About</a>
-<a class="hover:text-gray-300" href="contact.html">Contact</a>
+</div>
+<nav class="hidden md:flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 mt-4 md:mt-0 text-base" id="menu">
+<a class="text-white hover:text-gray-300" href="index.html">Home</a>
+<a class="text-white hover:text-gray-300" href="blog.html">Blog</a>
+<a class="text-white hover:text-gray-300" href="world-news.html">World</a>
+<a class="text-white hover:text-gray-300" href="technology.html">Technology</a>
+<a class="text-white hover:text-gray-300" href="health.html">Health</a>
+<a class="text-white hover:text-gray-300" href="education.html">Education</a>
+<a class="text-white hover:text-gray-300" href="about.html">About</a>
+<a class="text-white hover:text-gray-300" href="contact.html">Contact</a>
 </nav>
 </div>
 </header>
@@ -48,12 +52,35 @@
 </a>
 </div>
 </main>
+
+
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const toggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
-    toggle?.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
+    const toggle = document.getElementById("menu-toggle");
+    const menu = document.getElementById("menu");
+    const bar1 = document.getElementById("bar1");
+    const bar2 = document.getElementById("bar2");
+    const bar3 = document.getElementById("bar3");
+
+    toggle?.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+      bar1.classList.toggle("rotate-45");
+      bar1.classList.toggle("translate-y-1.5");
+      bar2.classList.toggle("opacity-0");
+      bar3.classList.toggle("-rotate-45");
+      bar3.classList.toggle("-translate-y-1.5");
+    });
+
+    const navLinks = menu?.querySelectorAll("a");
+    navLinks?.forEach(link => {
+      link.addEventListener("click", () => {
+        if (window.innerWidth < 768) {
+          menu.classList.add("hidden");
+          bar1.classList.remove("rotate-45", "translate-y-1.5");
+          bar2.classList.remove("opacity-0");
+          bar3.classList.remove("-rotate-45", "-translate-y-1.5");
+        }
+      });
     });
   });
 </script>
